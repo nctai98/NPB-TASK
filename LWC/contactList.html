@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Your Contact List" icon-name="standard:contact">
+        <lightning-datatable
+            key-field="Id"
+            data={contacts}
+            columns={columns}
+            draft-values={draftValues}
+            oncellchange={handleCellChange}
+            hide-checkbox-column
+            show-row-number-column
+        >
+        </lightning-datatable>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <lightning-button label="Previous" onclick={handlePrevious} disabled={disablePrevious} ></lightning-button>
+            <span>Page {pageNumber} of {totalPages}</span>
+            <lightning-button label="Next" onclick={handleNext} disabled={disableNext} ></lightning-button>
+        </div>
+    </lightning-card>
+</template>
